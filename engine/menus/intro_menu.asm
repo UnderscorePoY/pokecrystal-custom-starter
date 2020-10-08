@@ -58,7 +58,9 @@ Option:
 	farcall _Option
 	ret
 
-NewGame:
+NewGame: ; CHANGE
+	farcall SetDisabledCustomStarterMenu
+	
 	xor a
 	ld [wDebugFlags], a
 	call ResetWRAM
@@ -100,7 +102,7 @@ ResetWRAM:
 	call _ResetWRAM
 	ret
 
-_ResetWRAM:
+_ResetWRAM: ; CHANGES
 	ld hl, wVirtualOAM
 	ld bc, wOptions - wVirtualOAM
 	xor a
@@ -112,7 +114,12 @@ _ResetWRAM:
 	call ByteFill
 
 	ld hl, wGameData
-	ld bc, wGameDataEnd - wGameData
+	ld bc, wStartCustomStarterData - wGameData
+	xor a
+	call ByteFill
+	
+	ld hl, wEndCustomStarterData
+	ld bc, wGameDataEnd - wEndCustomStarterData
 	xor a
 	call ByteFill
 
@@ -309,7 +316,25 @@ InitializeWorld:
 	farcall _InitializeStartDay
 	ret
 
-LoadOrRegenerateLuckyIDNumber:
+LoadOrRegenerateLuckyIDNumber: ; CHANGE
+	;store current WRAM bank
+	ldh a, [rSVBK]
+	push af
+	;force WRAM bank 1
+	ld a, 1
+	ld [rSVBK], a
+	
+	ld a, [wPlayerID]
+	ld b, a
+	ld a, [wPlayerID + 1]
+	ld c, a
+	
+	;restore previous WRAM bank
+	pop af
+	ld [rSVBK], a
+	
+	push bc
+	
 	ld a, BANK(sLuckyIDNumber)
 	call OpenSRAM
 	ld a, [wCurDay]
@@ -323,16 +348,21 @@ LoadOrRegenerateLuckyIDNumber:
 	jr z, .skip
 	ld a, b
 	ld [sLuckyNumberDay], a
-	call Random
-	ld c, a
-	call Random
+	;call Random
+	;ld c, a
+	;call Random
 
 .skip
+	pop bc
+	ld a, b
 	ld [wLuckyIDNumber], a
-	ld [sLuckyIDNumber], a
 	ld a, c
-	ld [wLuckyIDNumber + 1], a
-	ld [sLuckyIDNumber + 1], a
+	ld [wLuckyIDNumber+1], a
+	;ld [wLuckyIDNumber], a
+	;ld [sLuckyIDNumber], a
+	;ld a, c
+	;ld [wLuckyIDNumber + 1], a
+	;ld [sLuckyIDNumber + 1], a
 	jp CloseSRAM
 
 Continue:

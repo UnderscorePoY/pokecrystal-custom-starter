@@ -1,4 +1,6 @@
 _TitleScreen:
+	farcall InitCustomStarter ; CHANGE
+	
 	call ClearBGPalettes
 	call ClearSprites
 	call ClearTilemap

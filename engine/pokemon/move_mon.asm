@@ -78,7 +78,7 @@ TryAddMonToParty:
 	dec a
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
-GeneratePartyMonStats:
+GeneratePartyMonStats: ; CHANGE
 ; wBattleMode specifies whether it's a wild mon or not.
 ; wMonType specifies whether it's an opposing mon or not.
 ; wCurPartySpecies/wCurPartyLevel specify the species and level.
@@ -202,10 +202,29 @@ endr
 	and a
 	jr nz, .copywildmonDVs
 
-	call Random
+	ld a, [wCustomStarterDefDV]
+	sla a
+	sla a
+	sla a
+	sla a
 	ld b, a
-	call Random
+	ld a, [wCustomStarterAtkDV]
+	or b
+	ld b, a
+	
+	ld a, [wCustomStarterSpcDV]
+	sla a
+	sla a
+	sla a
+	sla a
 	ld c, a
+	ld a, [wCustomStarterSpeDV]
+	or c
+	ld c, a
+	;call Random
+	;ld b, a
+	;call Random
+	;ld c, a
 .initializeDVs
 	ld a, b
 	ld [de], a

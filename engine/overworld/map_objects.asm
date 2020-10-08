@@ -549,6 +549,8 @@ MapObjectMovementPattern:
 	dw .MovementSpinCounterclockwise ; 19
 	dw .MovementBoulderDust ; 1a
 	dw .MovementShakingGrass ; 1b
+	dw .RandomSpin2_Bike ; 1c
+	dw .RandomSpin2_Walk ; 1d
 
 .Null_00:
 	ret
@@ -591,11 +593,45 @@ MapObjectMovementPattern:
 	ldh a, [hRandomAdd]
 	and %00001100
 	cp d
-	jr nz, .keep
+	jr nz, .keep2
 	xor %00001100
-.keep
+.keep2
 	ld [hl], a
 	jp RandomStepDuration_Fast
+
+; fast bike
+.RandomSpin2_Bike: ; CHANGE
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld a, [hl]
+	and %00001100
+	ld d, a
+	call Random
+	ldh a, [hRandomAdd]
+	and %00001100
+	cp d
+	jr nz, .keep2bike
+	xor %00001100
+.keep2bike
+	ld [hl], a
+	jp RandomStepDuration_Fast_Bike
+	
+; fast walk
+.RandomSpin2_Walk: ; CHANGE
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld a, [hl]
+	and %00001100
+	ld d, a
+	call Random
+	ldh a, [hRandomAdd]
+	and %00001100
+	cp d
+	jr nz, .keep2walk
+	xor %00001100
+.keep2walk
+	ld [hl], a
+	jp RandomStepDuration_Fast_Walk
 
 .Standing:
 	call Function462a
@@ -1048,11 +1084,35 @@ RandomStepDuration_Slow:
 	ldh a, [hRandomAdd]
 	and %01111111
 	jr SetRandomStepDuration
-
+	
 RandomStepDuration_Fast:
 	call Random
 	ldh a, [hRandomAdd]
 	and %00011111
+	jr SetRandomStepDuration
+
+RandomStepDuration_Fast_Bike: ; CHANGE (minimum of 18 frames @30fps)
+	call Random
+	ldh a, [hRandomAdd]
+	and %00011111
+	add 18
+	cp 32
+	jr c, .nomax
+	ld a, 31
+.nomax
+	jr SetRandomStepDuration
+
+RandomStepDuration_Fast_Walk: ; CHANGE (minimum of 26 frames @30fps)
+	call Random
+	ldh a, [hRandomAdd]
+	and %00011111
+	add 26
+	cp 32
+	jr c, .nomax
+	ld a, 31
+.nomax
+	jr SetRandomStepDuration
+	
 SetRandomStepDuration:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc

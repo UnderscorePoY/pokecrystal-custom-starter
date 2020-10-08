@@ -1,4 +1,4 @@
-SpriteMovementData::
+SpriteMovementData:: ; CHANGE
 ; entries correspond to SPRITEMOVEDATA_* constants
 
 ; SPRITEMOVEDATA_00
@@ -296,8 +296,24 @@ SpriteMovementData::
 	db 0 ; flags1
 	db 0 ; flags2
 	db SWIMMING ; palette flags
+	
+; SPRITEMOVEDATA_SPINRANDOM_FAST_BIKE ; CHANGE
+	db SPRITEMOVEFN_FAST_RANDOM_SPIN_BIKE ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_STAND ; action
+	db 0 ; flags1
+	db 0 ; flags2
+	db 0 ; palette flags
+	
+; SPRITEMOVEDATA_SPINRANDOM_FAST_WALK ; CHANGE
+	db SPRITEMOVEFN_FAST_RANDOM_SPIN_WALK ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_STAND ; action
+	db 0 ; flags1
+	db 0 ; flags2
+	db 0 ; palette flags
 
-; 25
+; 27
 	db SPRITEMOVEFN_00 ; movement function
 	db DOWN ; facing
 	db OBJECT_ACTION_STAND ; action

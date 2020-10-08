@@ -1,14 +1,15 @@
 ; GetOptionPointer.Pointers indexes
 	const_def
-	const OPT_TEXT_SPEED   ; 0
-	const OPT_BATTLE_SCENE ; 1
-	const OPT_BATTLE_STYLE ; 2
-	const OPT_SOUND        ; 3
-	const OPT_PRINT        ; 4
-	const OPT_MENU_ACCOUNT ; 5
-	const OPT_FRAME        ; 6
-	const OPT_CANCEL       ; 7
-NUM_OPTIONS EQU const_value    ; 8
+	const OPT_TEXT_SPEED     ; 0
+	const OPT_BATTLE_SCENE   ; 1
+	const OPT_BATTLE_STYLE   ; 2
+	const OPT_SOUND          ; 3
+	;const OPT_PRINT        ; 4
+	const OPT_CUSTOM_STARTER ; 4
+	const OPT_MENU_ACCOUNT   ; 5
+	const OPT_FRAME          ; 6
+	const OPT_CANCEL         ; 7
+NUM_OPTIONS EQU const_value  ; 8
 
 _Option:
 	ld hl, hInMenu
@@ -20,8 +21,16 @@ _Option:
 	ld b, SCREEN_HEIGHT - 2
 	ld c, SCREEN_WIDTH - 2
 	call Textbox
-	hlcoord 2, 2
+	
+	farcall IsDisabledCustomStarterMenu
+	and a
+	jr nz, .print
+	ld de, StringStarterOptions
+	jr .done
+.print
 	ld de, StringOptions
+.done
+	hlcoord 2, 2
 	call PlaceString
 	xor a
 	ld [wJumptableIndex], a
@@ -52,12 +61,25 @@ _Option:
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
+	ld b, a
 	and START | B_BUTTON
-	jr nz, .ExitOptions
+	jp nz, ExitOptions
+	farcall IsDisabledCustomStarterMenu
+	and a 
+	jr nz, .control
+	ld a, b
+	and A_BUTTON
+	jr z, .control
+	ld a, [wJumptableIndex]
+	cp OPT_CUSTOM_STARTER
+	jr nz, .control
+	farcall CustomStarterMenu
+	jp ExitOptions
+.control
 	call OptionsControl
 	jr c, .dpad
 	call GetOptionPointer
-	jr c, .ExitOptions
+	jp c, ExitOptions
 
 .dpad
 	call Options_UpdateCursorPosition
@@ -65,7 +87,7 @@ _Option:
 	call DelayFrames
 	jr .joypad_loop
 
-.ExitOptions:
+ExitOptions:
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
@@ -73,6 +95,23 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
+StringStarterOptions:
+	db "TEXT SPEED<LF>"
+	db "        :<LF>"
+	db "BATTLE SCENE<LF>"
+	db "        :<LF>"
+	db "BATTLE STYLE<LF>"
+	db "        :<LF>"
+	db "SOUND<LF>"
+	db "        :<LF>"
+	db "CUSTOM STARTER<LF>"
+	db "----------------<LF>" ; CHANGE
+	db "MENU ACCOUNT<LF>"
+	db "        :<LF>"
+	db "FRAME<LF>"
+	db "        :TYPE<LF>"
+	db "CANCEL@"
+	
 StringOptions:
 	db "TEXT SPEED<LF>"
 	db "        :<LF>"
@@ -99,7 +138,8 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
-	dw Options_Print
+	;dw Options_Print
+	dw Options_CustomStarter
 	dw Options_MenuAccount
 	dw Options_Frame
 	dw Options_Cancel
@@ -311,6 +351,12 @@ Options_Sound:
 
 .Mono:   db "MONO  @"
 .Stereo: db "STEREO@"
+
+Options_CustomStarter:
+	farcall IsDisabledCustomStarterMenu
+	and a
+	jp nz, Options_Print
+	ret
 
 	const_def
 	const OPT_PRINT_LIGHTEST ; 0

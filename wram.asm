@@ -2762,7 +2762,50 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+; CHANGE (was ds 49, so make sure all ds add up before wJackFightCount)
+wStartCustomStarterData::
+wCustomStarterAlphabeticalID::
+	ds 1
+wCustomStarterDexID::
+	ds 1
+
+wCustomStarterAtkDV::
+	ds 1
+wCustomStarterDefDV::
+	ds 1
+wCustomStarterSpeDV::
+	ds 1
+wCustomStarterSpcDV::
+	ds 1
+	
+wCustomStarterHiddenPowerBP::
+	ds 1
+wCustomStarterHiddenPowerTypeID::
+	ds 1
+
+wCustomStarterPosition::
+; bit 0 set: left (overrides Cyndaquil)
+; bit 1 set: middle (overrides Totodile)
+; bit 2 set: right (overrides Chikorita)
+	ds 1
+
+;wCustomStarterPositionX::
+	;ds 1
+
+wCustomStarter1::
+	ds 1
+wCustomStarter2::
+	ds 1
+wCustomStarter3::
+	ds 1
+	
+wDisabledCustomStarterMenu::
+; 0   = not disabled
+; any = disabled
+	ds 1
+
+wEndCustomStarterData::
+	ds 36
 
 ; fight counts
 wJackFightCount::    db

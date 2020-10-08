@@ -1,17 +1,26 @@
-# Pokémon Crystal [![Build Status][travis-badge]][travis]
+# Pokémon Crystal - Custom Starter ROM
 
-This is a disassembly of Pokémon Crystal.
+This is a **non-PSR-official, modified** version of the disassembly of Pokémon Crystal. Modifications are made to offer starter customization for the player, as well as workarounds for RNG manipulations and spinners.
 
-It builds the following ROMs:
+It builds the following ROM:
 
-- Pokemon - Crystal Version (UE) (V1.0) [C][!].gbc `sha1: f4cd194bdee0d04ca4eac29e09b8e4e9d818c133`
-- Pokemon - Crystal Version (UE) (V1.1) [C][!].gbc `sha1: f2f52230b536214ef7c9924f483392993e226cfb`
-- Pokemon - Crystal Version (A) [C][!].gbc `sha1: a0fc810f1d4e124434f7be2c989ab5b5892ddf36`
-- CRYSTAL_ps3_010328d.bin `sha1: c60d57a24bbe8ecf7cba54ab3f90669f97bd330d`
-- CRYSTAL_ps3_us_revise_010710d.bin `sha1: 391ae86b1d5a26db712ffe6c28bbf2a1f804c3c4`
+- Pokemon Crystal pokecrystal.gbc `sha1: 2b9f27193f47e57c925cf17b4557fe53c5b199fa` `crc32: 9E1B6E42`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
+## Main changes
+- Custom starter menu available before New Game, through the Option menu.
+- 5 Repels given by Elm's Assistant when exiting the Lab the first time.
+- 5 Master Balls given in exchange of Poké Balls by Elm's Assistant when exiting the Lab the second time.
+- Route 29 : only L2-3 Sentrets during Morning/Day times.
+- Route 30 : only L4 Hoppips during Morning/Day times, only L4 Poliwags during Night time.
+- Route 31 : only L5 Bellsprouts during Morning/Day times, only L4 Poliwags during Night time.
+- Randomly spinning trainers (or "spinners") have been adjusted to guarantee a dodge with an average reaction time.
+- Douglas (spinner in Mahogany Gym) faces away from the player's path.
+
+## Visuals
+![Image of Option menu](https://i.imgur.com/myGG3VH.png)
+![Image of Starter menu](https://i.imgur.com/0KuyUBi.png)
 
 ## See also
 
@@ -45,5 +54,3 @@ Other disassembly projects:
 [tutorials]: https://github.com/pret/pokecrystal/wiki/Tutorials
 [discord]: https://discord.gg/d5dubZ3
 [irc]: https://kiwiirc.com/client/irc.freenode.net/?#pret
-[travis]: https://travis-ci.org/pret/pokecrystal
-[travis-badge]: https://travis-ci.org/pret/pokecrystal.svg?branch=master

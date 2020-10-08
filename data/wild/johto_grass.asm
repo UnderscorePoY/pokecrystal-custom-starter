@@ -1190,24 +1190,42 @@ JohtoGrassWildMons:
 	db 23, GOLBAT
 	db 23, GOLBAT
 
-	map_id ROUTE_29
+	map_id ROUTE_29 ; CHANGE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
+	; db 2, PIDGEY
+	; db 2, SENTRET
+	; db 3, PIDGEY
+	; db 3, SENTRET
+	; db 2, RATTATA
+	; db 3, HOPPIP
+	; db 3, HOPPIP
+	
 	db 2, SENTRET
-	db 3, PIDGEY
+	db 2, SENTRET
 	db 3, SENTRET
-	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 2, SENTRET
+	db 2, SENTRET
+	db 3, SENTRET
+	db 3, SENTRET
+	
 	; day
-	db 2, PIDGEY
+	; db 2, PIDGEY
+	; db 2, SENTRET
+	; db 3, PIDGEY
+	; db 3, SENTRET
+	; db 2, RATTATA
+	; db 3, HOPPIP
+	; db 3, HOPPIP
+	
 	db 2, SENTRET
-	db 3, PIDGEY
+	db 2, SENTRET
 	db 3, SENTRET
-	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 2, SENTRET
+	db 2, SENTRET
+	db 3, SENTRET
+	db 3, SENTRET
+	
 	; nite
 	db 2, HOOTHOOT
 	db 2, RATTATA
@@ -1217,59 +1235,111 @@ JohtoGrassWildMons:
 	db 3, HOOTHOOT
 	db 3, HOOTHOOT
 
-	map_id ROUTE_30
+	map_id ROUTE_30 ; CHANGE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, LEDYBA
-	db 3, CATERPIE
-	db 4, CATERPIE
-	db 4, PIDGEY
-	db 3, WEEDLE
-	db 4, HOPPIP
-	db 4, HOPPIP
+	; db 3, LEDYBA
+	; db 3, CATERPIE
+	; db 4, CATERPIE
+	; db 4, PIDGEY
+	; db 3, WEEDLE
+	; db 4, HOPPIP
+	; db 4, HOPPIP
+	
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	db 4, HOPPIP 
+	
 	; day
-	db 3, PIDGEY
-	db 3, CATERPIE
-	db 4, CATERPIE
-	db 4, PIDGEY
-	db 3, WEEDLE
+	; db 3, PIDGEY
+	; db 3, CATERPIE
+	; db 4, CATERPIE
+	; db 4, PIDGEY
+	; db 3, WEEDLE
+	; db 4, HOPPIP
+	; db 4, HOPPIP
+	
 	db 4, HOPPIP
 	db 4, HOPPIP
+	db 4, HOPPIP
+	db 4, HOPPIP
+	db 4, HOPPIP
+	db 4, HOPPIP
+	db 4, HOPPIP
+	
 	; nite
-	db 3, SPINARAK
-	db 3, HOOTHOOT
-	db 4, POLIWAG
-	db 4, HOOTHOOT
-	db 3, ZUBAT
-	db 4, HOOTHOOT
-	db 4, HOOTHOOT
+	; db 3, SPINARAK
+	; db 3, HOOTHOOT
+	; db 4, POLIWAG; 
+	; db 4, HOOTHOOT
+	; db 3, ZUBAT
+	; db 4, HOOTHOOT
+	; db 4, HOOTHOOT
 
-	map_id ROUTE_31
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+
+	map_id ROUTE_31 ; CHANGE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, LEDYBA
-	db 4, CATERPIE
+	; db 4, LEDYBA
+	; db 4, CATERPIE
+	; db 5, BELLSPROUT
+	; db 5, PIDGEY
+	; db 4, WEEDLE
+	; db 5, HOPPIP
+	; db 5, HOPPIP
+	
 	db 5, BELLSPROUT
-	db 5, PIDGEY
-	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	
 	; day
-	db 4, PIDGEY
-	db 4, CATERPIE
+	; db 4, PIDGEY
+	; db 4, CATERPIE
+	; db 5, BELLSPROUT
+	; db 5, PIDGEY
+	; db 4, WEEDLE
+	; db 5, HOPPIP
+	; db 5, HOPPIP
+	
 	db 5, BELLSPROUT
-	db 5, PIDGEY
-	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
+	
 	; nite
-	db 4, SPINARAK
+	; db 4, SPINARAK
+	; db 4, POLIWAG
+	; db 5, BELLSPROUT
+	; db 5, HOOTHOOT
+	; db 4, ZUBAT
+	; db 5, GASTLY
+	; db 5, GASTLY
+	
 	db 4, POLIWAG
-	db 5, BELLSPROUT
-	db 5, HOOTHOOT
-	db 4, ZUBAT
-	db 5, GASTLY
-	db 5, GASTLY
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
+	db 4, POLIWAG
 
 	map_id ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
