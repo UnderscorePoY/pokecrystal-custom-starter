@@ -19,7 +19,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 - Douglas (spinner in Mahogany Gym) faces away from the player's path.
 
 ## Visuals
-![Image of Option menu](https://i.imgur.com/myGG3VH.png)
+![Image of Option menu](https://i.imgur.com/b7vM1id.png)
 ![Image of Starter menu](https://i.imgur.com/0KuyUBi.png)
 
 ## See also
