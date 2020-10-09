@@ -8,6 +8,8 @@ It builds the following ROM:
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
+If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES.md**](PATCHES.md)
+
 ## Main changes
 - Custom starter menu available before New Game, through the Option menu.
 - 5 Repels given by Elm's Assistant when exiting the Lab the first time.
@@ -24,33 +26,20 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 
 ## See also
 
+- **Gen 1-3 Pokémon Speedrunning:** [Discord][speedrun-discord]
+
 - [**FAQ**](FAQ.md)
 - [**Documentation**][docs]
 - [**Wiki**][wiki] (includes [tutorials][tutorials])
-- **Discord:** [pret][discord]
-- **IRC:** [freenode#pret][irc]
 
 Other disassembly projects:
 
-- [**Pokémon Red/Blue**][pokered]
-- [**Pokémon Yellow**][pokeyellow]
-- [**Pokémon Gold/Silver**][pokegold]
-- [**Pokémon Pinball**][pokepinball]
-- [**Pokémon TCG**][poketcg]
-- [**Pokémon Ruby**][pokeruby]
-- [**Pokémon FireRed**][pokefirered]
-- [**Pokémon Emerald**][pokeemerald]
+- [**Pokémon Red/Blue - Custom Starter**][pokered-custom-starter]
+- [**Pokémon Crystal**][pokecrystal]
 
-[pokered]: https://github.com/pret/pokered
-[pokeyellow]: https://github.com/pret/pokeyellow
-[pokegold]: https://github.com/pret/pokegold
-[pokepinball]: https://github.com/pret/pokepinball
-[poketcg]: https://github.com/pret/poketcg
-[pokeruby]: https://github.com/pret/pokeruby
-[pokefirered]: https://github.com/pret/pokefirered
-[pokeemerald]: https://github.com/pret/pokeemerald
+[speedrun-discord]: https://discord.gg/NjQFEkc
+[pokered-custom-starter]: https://github.com/Arcaseriam/pokered-custom-starter
+[pokecrystal]: https://github.com/pret/pokecrystal
 [docs]: https://pret.github.io/pokecrystal/
 [wiki]: https://github.com/pret/pokecrystal/wiki
 [tutorials]: https://github.com/pret/pokecrystal/wiki/Tutorials
-[discord]: https://discord.gg/d5dubZ3
-[irc]: https://kiwiirc.com/client/irc.freenode.net/?#pret
