@@ -202,23 +202,23 @@ endr
 	and a
 	jr nz, .copywildmonDVs
 
-	ld a, [wCustomStarterDefDV]
+	ld a, [wCustomStarterAtkDV]
 	sla a
 	sla a
 	sla a
 	sla a
 	ld b, a
-	ld a, [wCustomStarterAtkDV]
+	ld a, [wCustomStarterDefDV]
 	or b
 	ld b, a
 	
-	ld a, [wCustomStarterSpcDV]
+	ld a, [wCustomStarterSpeDV]
 	sla a
 	sla a
 	sla a
 	sla a
 	ld c, a
-	ld a, [wCustomStarterSpeDV]
+	ld a, [wCustomStarterSpcDV]
 	or c
 	ld c, a
 	;call Random

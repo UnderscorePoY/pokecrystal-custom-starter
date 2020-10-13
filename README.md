@@ -4,7 +4,7 @@ This is a **non-PSR-official, modified** version of the disassembly of Pokémon 
 
 It builds the following ROM:
 
-- Pokemon Crystal pokecrystal.gbc `sha1: 2b9f27193f47e57c925cf17b4557fe53c5b199fa` `crc32: 9E1B6E42`
+- Pokemon Crystal pokecrystal.gbc `sha1: eb3eb929212779ec683ce455fd9f8e14ead90cc8` `crc32: F3CAC6B3`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
