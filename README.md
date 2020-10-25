@@ -4,7 +4,7 @@ This is a **non-PSR-official, modified** version of the disassembly of Pokémon 
 
 It builds the following ROM:
 
-- Pokemon Crystal pokecrystal.gbc `sha1: 0d4737a8b5d06c026c4446cc8e7c7ae05b6ddf5c` `crc32: 8E8CD354`
+- Pokemon Crystal pokecrystal.gbc `sha1: 397d0e6d43a3064f601d5a13a22d5bc283f1a04b` `crc32: FCAC0DA8`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
@@ -14,6 +14,7 @@ If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES
 - Custom starter menu available before New Game, through the Option menu.
 - 5 Repels given by Elm's Assistant when exiting the Lab the first time.
 - 5 Master Balls given in exchange of Poké Balls by Elm's Assistant when exiting the Lab the second time.
+- Master Balls sell for 100 each (same as Poké Ball).
 - Route 29 : only L2-3 Sentrets during Morning/Day times.
 - Route 30 : only L4 Hoppips during Morning/Day times, only L4 Poliwags during Night time.
 - Route 31 : only L5 Bellsprouts during Morning/Day times, only L4 Poliwags during Night time.
