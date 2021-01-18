@@ -18,10 +18,10 @@ AIScoring: ; used only for BANK(AIScoring)
 ; 6) The symbol " & " represents multiple score changes for a single flow.
 ;      Example : move ─&─► encourage
 ;                      └ other moves ─► discourage
-;      reads as : move is encouraged and all others are discouraged.
+;      reads as : " move is encouraged and all others are discouraged ".
 ; 7) A jump to a different part of the graph is written between brackets.
 ;      Example : (enemy is full HP) ─ [A] 
-;      reads as : " if enemy is full HP, jump to label [A] below.
+;      reads as : " if enemy is full HP, jump to label [A] below ".
 
 AI_Basic:
 ; Modifiable scores : ALL_MOVES | Randomness : NO
