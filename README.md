@@ -9,7 +9,7 @@ It builds the following ROM:
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
-If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES.md**](PATCHES.md) (IT/Automash ROM produced from the patch : `sha1: 7615018f76d100cbba26884b8a9c4e0f39e014e6` `crc32: C8AC5819`).
+If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES.md**](PATCHES.md) (an additional patch produces an IT/Automash ROM : `sha1: 7615018f76d100cbba26884b8a9c4e0f39e014e6` `crc32: C8AC5819`).
 
 ## Main changes
 ### Menus
