@@ -1,28 +1,43 @@
+
 # Pokémon Crystal - Custom Starter ROM
 
 This is a **non-PSR-official, modified** version of the disassembly of Pokémon Crystal. Modifications are made to offer starter customization for the player, as well as workarounds for RNG manipulations and spinners.
 
 It builds the following ROM:
 
-- Pokemon Crystal pokecrystal.gbc `sha1: 397d0e6d43a3064f601d5a13a22d5bc283f1a04b` `crc32: FCAC0DA8`
+- Pokemon Crystal pokecrystal.gbc `sha1: 1e51e882c94ca722a40c070b7855aa316c94f95f` `crc32: 9BD75359`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
-If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES.md**](PATCHES.md)
+If you only need to apply the changes to an existing vanilla ROM, see [**PATCHES.md**](PATCHES.md) (IT/Automash ROM produced from the patch : `sha1: 7615018f76d100cbba26884b8a9c4e0f39e014e6` `crc32: C8AC5819`).
 
 ## Main changes
-- Custom starter menu available before New Game, through the Option menu.
-- 5 Repels given by Elm's Assistant when exiting the Lab the first time.
-- 5 Master Balls given in exchange of Poké Balls by Elm's Assistant when exiting the Lab the second time.
-- Master Balls sell for 100 each (same as Poké Ball).
-- Route 29 : only L2-3 Sentrets during Morning/Day times.
-- Route 30 : only L4 Hoppips during Morning/Day times, only L4 Poliwags during Night time.
-- Route 31 : only L5 Bellsprouts during Morning/Day times, only L4 Poliwags during Night time.
-- Randomly spinning trainers (or "spinners") have been adjusted to guarantee a dodge with an average reaction time.
+### Menus
+- The added Custom Starter menu is available before New Game, through the Option menu. No access to it is possible after a run is started.
+### Items
+- 5 Repels are given by Elm's Assistant when exiting the Lab the first time (additionally to the vanilla Potion).
+- 5 Master Balls are given by Elm's Assistant when exiting the Lab the second time (replacing Poké Balls).
+- Master Balls sell for 100$ each (same as Poké Ball).
+
+### Forced encounters
+(a dash `-` denotes no modifications to vanilla encounters)
+Location | Morning/Day | Night
+--- | --- | ---
+Route 29 | L2 Sentret (75%) <br/> L3 Sentret (25%) | -
+Route 30 | L4 Hoppip | L4 Poliwag
+Route 31 | L5 Bellsprout | L4 Poliwag
+Route 34 | L10 Abra | L10 Abra
+Route 36 | L5 Growlithe | -
+Dark Cave <br/> Violet side | L4 Geodude | L4 Geodude
+Sprout Tower | - | L4 Gastly
+Ilex Forest | L6 Paras | L7 Psyduck
+
+### Spinners
+- Randomly spinning trainers (or "spinners") have been adjusted to guarantee a dodge with an average reaction time (minimal spin time of 0.6/0.86 seconds for Bike/Walk dodges).
 - Douglas (spinner in Mahogany Gym) faces away from the player's path.
 
 ## Visuals
-![Image of Option menu](https://i.imgur.com/b7vM1id.png)
+![Image of Option menu](https://i.imgur.com/U9FqOvC.png)
 ![Image of Starter menu](https://i.imgur.com/0KuyUBi.png)
 
 ## See also
